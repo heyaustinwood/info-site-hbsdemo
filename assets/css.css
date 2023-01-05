@@ -1,0 +1,287 @@
+html, body {
+  font-family: 'Satoshi', arial;
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: lightgrey;
+}
+
+button {
+  padding: 4px 10px;
+  font-size: 17px;
+  font-family: 'Nitti', arial;
+  cursor: pointer;
+  white-space: nowrap;
+}
+button.block {
+  display: block;
+  width: 100%;
+}
+
+
+
+/* content container */
+.container {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+
+/* header brand and nav */
+.site-header {
+  padding: 10px;
+  background-color: lightslategrey;
+}
+.site-header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-wrap {
+  display: inline-flex;
+}
+.brand-logo {
+  display: inline-flex;
+}
+.brand-logo a {
+  display: inline-flex;
+}
+.brand-logo a img {}
+.mobile-nav-trigger {
+  display: none;
+}
+.main-menu {}
+.main-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-menu ul li {
+  display: inline;
+  margin-left: 10px;
+}
+.main-menu ul li a {}
+
+@media (max-width: 650px) {
+  .site-header {
+    padding: 10px 0 0 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+  }
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  .mobile-nav-trigger {
+    display: inline-block;;
+  }
+  .main-menu {
+    display: block;
+    width: 100%;
+  }
+  .main-menu ul li {
+    display: block;
+    margin: 0;
+  }
+  .main-menu ul li a {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    text-decoration: none;
+  }
+  .main-menu ul li:last-child a {
+    border-bottom: none;
+  }
+}
+
+/* collapse show classes */
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+}
+
+.collapse.show {
+  max-height: 99em;
+}
+
+
+
+/* billboard header */
+.billboard {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  background-color: lightslategrey;
+}
+.billboard > .container {
+  padding: 80px 120px 110px;
+}
+.billboard h1 {
+  font-family: 'Lora', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.billboard h3 {
+  font-weight: 500;
+}
+
+@media (max-width: 850px) {
+  .billboard > .container {
+    padding: 60px 20px 90px;
+  }
+  .billboard h1 {
+    font-size: 2em;
+  }
+}
+
+
+
+/* main content */
+.main-content .container {
+  display: flex;
+  flex-direction: row;
+}
+.main-content section {
+  padding: 15px;
+}
+.main-content section {
+  width: 100%;
+  background-color: white;
+}
+.main-content aside {
+  width: 280px;
+  min-width: 280px;
+  background-color: red;
+}
+
+@media (max-width: 650px) {
+  .main-content .container {
+    flex-direction: column;
+  }
+  .main-content aside {
+    width: 100%;
+  }
+}
+
+
+
+/* article preview */
+.article-preview {
+  margin: 10px 0;
+}
+.article-preview a {
+  text-decoration: none;
+}
+.article-preview a img {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+}
+.article-preview a h4 {
+  font-size: 1.4em;
+}
+
+
+/* grid layouts */
+
+.layout-grid {
+  display: grid;
+  grid-gap: 15px;
+}
+
+@media (max-width: 650px) {
+  .layout-grid {
+    display: block;
+  }
+  .layout-grid > div {
+    margin-bottom: 15px;
+  }
+  .form-group > .layout-grid > div,
+  .layout-grid > .form-group {
+    margin-bottom: 10px;
+  }
+  .layout-grid > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* 2 column, 1:2 */
+.layout-grid.col-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+/* 2 column, 2:1 */
+.layout-grid.col-2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* 2 column, 1:3 */
+.layout-grid.col-1-3 {
+  grid-template-columns: 1fr 3fr;
+}
+
+/* 2 column, 3:1 */
+.layout-grid.col-3-1 {
+  grid-template-columns: 3fr 1fr;
+}
+
+/* 2 column, 1:1 */
+.layout-grid.col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 3 columns, 1/3 each */
+.layout-grid.col-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* 4 columns, 25% each */
+.layout-grid.col-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+
+/* forms */
+.form-group {
+  display: block;
+  width: 100%;
+  clear: both;
+  margin: 0 0 10px;
+}
+.form-group label {
+  display: block;
+  width: 100%;
+  margin: 0 0 5px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 6px;
+}
